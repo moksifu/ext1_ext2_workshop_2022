@@ -1,0 +1,172 @@
+\documentclass[11pt, a4paper, oneside]{exam}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{MnSymbol}
+\usepackage{appendix}
+\usepackage{graphicx}
+
+\theoremstyle{definition}\newtheorem{define}{Definition}[section]
+\theoremstyle{remark}\newtheorem{remark}{Remark}
+\theoremstyle{definition}\newtheorem{example}{Example}[subsection]
+\theoremstyle{definition}\newtheorem{notation}{Notation}[section]
+\theoremstyle{definition}\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}\newtheorem{corollary}{Corollary}[section]
+
+
+\title{asdf}
+\author{Name
+}
+\date{}
+
+\begin{document}
+
+
+% the formatting of sections and lists is wrong until after 1st question	, so adding a hidden 1st question
+
+
+% ------------------------------------------------------------------------------
+%
+% BODY PAGES
+%
+% ------------------------------------------------------------------------------
+
+
+
+\section{Types of Proof}
+Establishing the truthfulness of a theorem is a foundational practice in Mathematics and Philosophy that allows knowledge and understanding of the world around us to grow. Different methods of proof will be explored and applied in this topic.
+
+\begin{define}[Conjecture]$\empty$\\
+	A conjecture is a proposition that is suspected to be true due to preliminary supporting evidence, but for which no proof or disproof has yet been found.
+\end{define}
+
+\begin{define}[Example and Counter-Example]$\empty$\\
+	An example is a particular case of the conjecture/theorem that supports it.	A counter-example is a particular case of the conjecture/theorem that disproves it.
+\end{define}
+
+\begin{remark}
+	Note that an example is not enough to prove a conjecture, but one counter-example is enough to disprove it.
+\end{remark}
+
+Below is a list of techniques of proof that will be explored in this topic.
+
+\begin{enumerate}
+	\item Direct Proof
+
+		Direct proof establishes the result by logically combining the axioms, definitions, assumptions and earlier theorems.
+
+	\item Proof by Contradiction
+
+		Proof by contradiction (also known as Reductio Ad Absurdum) assumes the negation of the result to be true, and a logical contradiction is then derived. Hence, the negation must be false. 
+
+	\item Proof by Contraposition
+
+		Proof by contraposition establishes the result for ``if $p$ then $q$" statements by directly proving the logically equivalent statement ``if not $q$ then not $p$". 
+
+	\item Proof by Exhaustion
+
+		Proof by exhaustion divides the problem into a finite number of cases for which each case is then solved separately. An example of this is the proof for the ``four colour map theorem" which involved 1936 cases. It was a controversial proof as it was the first time a computer program was used to check a majority of the cases.
+
+	\item Mathematical Induction 
+
+		Proof by mathematical induction establishes the result is true for a single ``base case", and then an induction rule that proves that any arbitrary case implies the next case. Since the induction rule can be applied infinitely from the base case, then all the cases that follow it are provable. This type of proof will be explored in a separate lesson.
+\end{enumerate}
+
+\newpage
+\section{Problem Set}
+\begin{questions}
+\question By using direct proof, prove the following results:
+\begin{parts}
+	\part[2] If $m$ is odd and $n$ is even, then $mn$ is even.\\
+
+	\part[2] If $m$ is a multiple of 5, then $m^2$ is a multiple of 25.\\
+
+	\part[2] The sum of two consecutive integers is odd.\\
+	
+	\part[2] The sum of two even integers is even.\\
+\end{parts}
+
+
+\question By using proof by contradiction, prove the following results:
+\begin{parts}
+	\part[2] Prove that $\sqrt{2}$ is an irrational number.\\
+
+	\part[2] Prove that $\log_2(5)$ is an irrational number.\\
+
+	
+
+	\part[2] Prove that the length of the hypotenuse for any triangle is less than the sum of the lengths of the two remaining sides.\\
+
+	\part[2] Prove that there are infinitely many prime numbers.\\
+\end{parts}
+
+
+
+\question By using proof by contraposition, prove the following results:
+\begin{parts}
+	\part[2] Let $x \in \mathbb{Z}$. If $x^2$ is even, then $x$ is even.\\
+
+	\part[2] Let $x \in \mathbb{Z}$. If $x^2 - 6x + 5$ is even, then $x$ is odd.\\
+	
+
+	\part[2] If $a$ and $b$ are real numbers such that the product $ab$ is an irrational number, then $a$ or $b$ must be an irrational number.\\
+
+	\part[2] Let $x \in \mathbb{Z}$. If $x$ is even, then $3x+1$ is odd.\\
+\end{parts}
+
+
+\question[3] Prove that for any integers $a$ and $b$, if $a+b \geq 15$ then $a \geq 8$ or $b \geq 8$.\\
+
+\question[3] Let $m$ objects be distributed into $n$ bins. If $m>n$, then there is some bin that contains at least two objects.\\
+
+
+\question[2] (Mathematics Extension II Sample Examination Material)
+
+It is given that $a$ and $b$ are positive real numbers. 
+
+Consider the statement $\forall a(\forall b, a^{\ln b} = b^{\ln a})$.
+
+Either prove that the statement is true or provide a counter-example.\\
+
+\question (Mathematics Extension II Sample Examination Material)
+
+Let $\alpha = \sqrt{4n-2}$ where $n$ is a fixed positive integer.
+\begin{parts}
+	\part[3] Prove that $\alpha$ is irrational.\\
+
+	
+	Let $\{\beta\}$ denote the `fractional' part of $\beta$, so $\beta = k + \{ \beta \}$ where $k$ is an integer and $0\leq \{\beta\} < 1$.
+
+	\part[3] Let $N$ be a positive integer. Consider the numbers
+	\[ 0, \{\alpha\}, \{ 2 \alpha\}, \ldots, \{ (N-1)\alpha \}, \{N\alpha\}.\]
+
+	By dividing the interval $[0,1]$ into sections, or otherwise, prove that at least two of these numbers differ by less than $\frac{1}{N}$.\\
+
+	\part[1] Hence, prove that, for any positive integer $N$, there exist integers $p$ and $q$ such that $0 < |q\alpha - p| < \frac{1}{N}$.\\
+\end{parts}
+
+
+\question[3] Prove that every prime number greater than 3 is either one more or one less than a multiple of 6.\\
+
+\question[3] Prove by exhaustion that if an integer is a perfect cube, then it must be either a multiple of 9, or 1 less than a multiple of 9, or 1 more than a multiple of 9.\\
+
+
+\question[3] Prove that if $r$ is irrational then $\sqrt{r}$ is irrational.\\
+
+
+
+
+
+
+
+% ------------------------------------------------------------------------------
+\end{questions}
+\end{document}
+
+% ------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
+
+

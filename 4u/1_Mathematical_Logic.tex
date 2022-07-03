@@ -1,0 +1,403 @@
+\documentclass[11pt, a4paper, oneside]{exam}
+\usepackage[margin=3cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{MnSymbol}
+\usepackage{appendix}
+\usepackage{graphicx}
+
+\theoremstyle{definition}\newtheorem{define}{Definition}[section]
+\theoremstyle{remark}\newtheorem{remark}{Remark}
+\theoremstyle{definition}\newtheorem{example}{Example}[subsection]
+\theoremstyle{definition}\newtheorem{notation}{Notation}[section]
+\theoremstyle{definition}\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}\newtheorem{corollary}{Corollary}[section]
+
+
+\title{asdf}
+\author{Name
+}
+\date{}
+
+\begin{document}
+
+
+
+% ------------------------------------------------------------------------------
+%
+% BODY PAGES
+%
+% ------------------------------------------------------------------------------
+
+\section{Statements and Propositions}
+
+In mathematical logic, a proposition is an object that carries a truth-value (true or false but not both). Statements are declarative sentences that expresses a proposition, which are then said to be true or false.
+For example, the statement ``$2+2=4$'' and ``two plus two equals four'' are two different statements that express the same proposition. 
+
+Since statements are sentences and their interpretation is open to context and understanding of the person who reads it, it is important to clarify the proposition that it expresses carefully.
+For example, the statement ``Sydney is in Australia'' can express two different propositions depending on the context: most of us will understand it as the capital city of New South Wales, Sydney, is located in Australia, but someone else who has a friend called Sydney may interpret it as their friend is currently in Australia.
+
+If the understanding of the statement is clear, then the use of the terms `statement' and `proposition' are interchangeable.
+
+In the study of mathematical logic, the interactions between different propositions and their truth-values is explored. Having a basic framework in understanding logic is important to make sure we understand how proofs work.
+
+\section{Syntax and Semantics}
+
+In mathematics, `syntax' is to do with studying a consistent set of rules with symbols that represent some meaning. For example, the study of Algebra is concerned with developing an understanding of the correct order of operations, and we represent quantities with variables. In logic, we let individual propositions be letters and explore their interactions with logical connectives.
+
+`Semantics' is to do with extracting meaning out of the symbols.
+
+Consider the following example with Algebra: Let $x$ be the number of apples in a shopping bag.
+
+\begin{center}
+\begin{tabular}{|c|c|}\hline
+	Syntax & Semantics\\ \hline
+	$x+3$ & add 3 apples into the bag\\
+	$x-x$ & take out all the apples in the bag\\
+	$x=5$ & there are five apples in the bag\\ \hline
+\end{tabular}
+\end{center}
+
+Let $P$ and $Q$ represent different propositions. In logic we are interested in studying the following logical connectives and their combinations:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}\hline
+	Syntax & Semantics & Name of Operation\\ \hline
+	$\neg P$ & not $P$ & Negation\\
+	$P \land Q$ & $P$ and $Q$ & Conjunction\\
+	$P \lor Q$ & $P$ or $Q$ &(Inclusive) Disjunction\\
+	$P \Rightarrow Q$ & if $P$ then $Q$ & Implication\\
+	$P \Leftrightarrow Q$ & $P$ if and only if $Q$ & Equivalence\\ 
+	$\forall x: P(x)$ & For all $x$, $P(x)$ & Universal Quantification\\ 
+	$\exists x: P(x)$ & There exists at least one $x$ such that $P(x)$ & Existential Quantification\\ \hline
+\end{tabular}
+\end{center}
+
+Furthermore, to better understand the important relationship between syntax and semantics, observe the following representations of the quadratic formula:
+
+Historically, the Indian mathematician Brahmagupta (597-668 AD) wrote the formula in words: ``To the absolute number multiplied by four times the [coefficient of the] square, add the square of the [coefficient of the] middle term; the square root of the same, less the [coefficient of the] middle term, being divided by twice the [coefficient of the] square is the value.''
+
+We now learn it in the form of symbols:
+\[ x = \frac{-b \pm \sqrt{b^2 -4ac}}{2a} \]
+
+\subsection{Compound Propositions and Truth-Values}
+
+Compound Propositions are propositions made up of one or more propositions and logical connectives as listed in the table on the previous page. 
+
+As defined, a proposition $P$ must hold a truth-value: true or false, but not both:
+
+In this section, we will explore the truth-values of compound propositions with the different logical symbols. 
+
+\subsection{Negation}
+Negation swaps the truth-values of the proposition. For example, consider the following statements:
+
+\begin{center}
+\begin{tabular}{c|c}
+	Statement & Negation\\ \hline
+	The sky is green. & The sky is not green.\\
+	$x = 2$ & $x\not = 2$\\
+	$x > 4$ & $x \leq 4$
+\end{tabular}
+\end{center}
+
+We can represent the truth-values with the following truth-table:
+
+\begin{center}
+\begin{tabular}{|c|c|}\hline
+	$P$ & $\neg P$\\ \hline
+	T & F\\
+	F & T\\ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Conjunction}
+A compound proposition that joins two propositions $P$, $Q$ with a conjunction (and, $P\land Q$) is true if both $P$ and $Q$ are true. For example, consider the following statements:
+
+\begin{center}
+	\begin{tabular}{c|c|c}
+		Statement $P$ & Statement $Q$ & Conjunction\\ \hline
+		The sky is blue. & The grass is green. & The sky is blue and the grass is green.\\
+		$x = 1$ & $x = 2$ & $x=1$ and $x=2$\\
+		$x > 4$ & $x < 0$ & $x>4$ and $x<0$\\
+		$x \geq 5$ & $x \leq 11$ & $5 \leq x \leq 11$
+	\end{tabular}
+\end{center}
+
+The truth-table:
+\begin{center}
+	\begin{tabular}{|c|c|c|} \hline
+		$P$ & $Q$ & $P \land Q$\\ \hline
+		T & T & T\\
+		T & F & F\\
+		F & T & F\\
+		F & F & F\\ \hline
+	\end{tabular}
+\end{center}
+
+
+\subsection{Disjunction}
+A compound proposition that joins two propositions $P$, $Q$ with a disjunction (or, $P\lor Q$) is true if at least one of $P$ or $Q$ are true. For example, consider the following statements:
+
+\begin{center}
+	\begin{tabular}{c|c|c}
+		Statement $P$ & Statement $Q$ & Disjunction\\ \hline
+		$x=1$ & $x=2$ & $x=1$ or $x=2$\\
+		$x > 4$ & $x<0$ & $x>4$ or $x <0$\\
+		$x \geq 5$ & $x \leq 11$ & $x \in \mathbb{R}$
+	\end{tabular}
+\end{center}
+
+The truth-table:
+
+\begin{center}
+	\begin{tabular}{|c|c|c|}\hline
+		$P$ & $Q$ & $P \lor Q$\\ \hline
+		T & T & T\\
+		T & F & T\\
+		F & T & T\\
+		F & F & F\\ \hline
+	\end{tabular}
+\end{center}
+
+\subsection{Implication}
+A compound proposition that joins two propositions $P$, $Q$ with an implication (if $P$ then $Q$, $P \Rightarrow Q$) is only false if the conclusion $Q$ is false from a true premise $P$. In the case that the premise $P$ is false, the conclusion $Q$ does not matter and the implication $P \Rightarrow Q$ is trivially true.
+
+This is hard to understand intuitively, and will require some reflecting and consideration to accept.
+
+For example, consider the following statements:
+
+\begin{center}
+	\small
+	\begin{tabular}{c|c|c}
+		Statement $P$ & Statement $Q$ & Implication\\ \hline
+		It is raining. & John will bring an umbrella. & If it is raining then John will bring an umbrella.\\
+		Pigs can fly. & I am superman. & If pigs can fly then I am superman.\\
+		$a$, $b$, $c$ are sides of a triangle & $a + b > c$ & If $a$, $b$, $c$ are sides of a triangle then $a+b > c$.\\
+		$x > y$ & $x^2 > y^2$ & If $x>y$ then $x^2 > y^2$.
+	\end{tabular}
+\end{center}
+
+The truth-table:
+
+\begin{center}
+	\begin{tabular}{|c|c|c|}\hline
+		$P$ & $Q$ & $P \Rightarrow Q$\\ \hline
+		T & T & T\\
+		T & F & F\\
+		F & T & T\\
+		F & F & T\\ \hline
+	\end{tabular}
+\end{center}
+
+Since $P \Rightarrow Q$ is always true if $P$ is false, then when proving implication statements, we assume $P$ to be true and aim to determine the truth-value of $Q$. 
+
+
+\subsection{Equivalence}
+
+A compound proposition that joins two propositions $P$, $Q$ with an equivalence ($P$ if and only if $Q$, $P \Leftrightarrow Q$) is logically equivalent to $(P \Rightarrow Q) \land (Q \Rightarrow P)$. i.e. its implication and converse are both true. Note that the use of ``only if'' in mathematical logic is the reverse implication of the use of ``if''.
+
+The truth-table:
+
+\begin{center}
+	\begin{tabular}{|c|c|c|}\hline
+		$P$ & $Q$ & $P \Leftrightarrow Q$\\ \hline
+		T & T & T\\
+		T & F & F\\
+		F & T & F\\
+		F & F & T\\ \hline
+	\end{tabular}
+\end{center}
+
+In proving $P \Leftrightarrow Q$ statements, we must prove both $P \Rightarrow Q$ and $Q \Rightarrow P$ are true. In general, these proofs have two parts.
+
+\subsection{Quantification}
+	Quantifiers such as $\forall$ and $\exists$ define subsets of a universal set of elements for which a statement is true. 
+
+	The universal quantifier asserts that a statement is true for all elements in a given subset. For example: 
+	\[ \forall x \in \mathbb{N}: -x \leq 0 \]
+
+	The existential quantifier asserts the existence of at least one element in a given subset for which the statement is true. Hence, sometimes it is read as ``for some'', rather than ``for all''. For example:
+	\[ \exists x \in \mathbb{R}: x + 3 > 5 \]
+
+	In many theorems, it is common to combine both. For example:
+
+	\[ \forall x \in \mathbb{R}, \exists y \in \mathbb{R}: x + y = 5\]
+	\[ \exists x \in \mathbb{R}, \forall y \in \mathbb{R}: x + y = 5\]
+
+The meaning is completely different. In the first example, we say that given any real number, there is another real number such that they sum to 5 (note: this is true). In the second example, there is a real number for which all real numbers added to it is equal to 5 (note: this is false).
+
+To better understand the truth-value of statements with quantifiers, their negations are helpful. In general:
+\begin{align*}
+	\neg ( \forall x : P(x)) & \Leftrightarrow \exists x : \neg P(x)\\
+	\neg ( \exists x : P(x)) & \Leftrightarrow \forall x : \neg P(x)
+\end{align*}
+
+For example:
+\[ \neg( \exists x \in \mathbb{R}, \forall y \in \mathbb{R} : x + y = 5) \]
+is logically equivalent to
+\[ \forall x \in \mathbb{R}, \exists y \in \mathbb{R}: x + y \not = 5\]
+Observe that the negated statement is true, hence the original statement without negation is false.
+
+\newpage
+\section{Converse, Inverse, Contrapositive of Implication}
+In the implication $P \rightarrow Q$, we have the following related propositions:
+
+\begin{center}
+	\begin{tabular}{|c|c|}\hline
+		Name & Syntax\\\hline
+		Implication & $P \Rightarrow Q$\\
+		Inverse & $\neg P \Rightarrow \neg Q$\\
+		Converse & $Q \Rightarrow P$\\
+		Contrapositive & $\neg Q \Rightarrow \neg P$\\ \hline
+	\end{tabular}
+\end{center}
+
+Note the following:
+\begin{itemize}
+	\item Only the Contrapositive is logically equivalent to the Implication. For example:
+
+``If it is raining then I will bring an umbrella'' is equivalent to ``if I do not bring an umbrella then it is not raining.''
+
+	\item If an Implication it true, then the Inverse and Converse are not necessarily true. 
+	\item If an Implication is true, and the Converse is also true, then $P$ and $Q$ are equivalent. Recall that $(P \Rightarrow Q) \land (Q \Rightarrow P)$ is the definition of $P \Leftrightarrow Q$.
+\end{itemize}
+
+\section{Extra Considerations}
+\subsection{Negation of Conjunction and Disjunction}
+Note the following (De Morgan's Laws):
+\begin{align*}
+	\neg (P \land Q) \Leftrightarrow \neg P \lor \neg Q\\
+	\neg (P \lor Q) \Leftrightarrow \neg P \land \neg Q
+\end{align*}
+\subsection{Negation of Implication}
+To find the negation of an implication, first observe that the truth-table for $\neg P \lor Q$ is the same as $P \Rightarrow Q$:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|} \hline
+	$P$ & $Q$ & $\neg P$ & $\neg P \lor Q$\\ \hline
+	T & T & F & T\\
+	T & F & F & F\\
+	F & T & T & T\\
+	F & F & T & T\\ \hline
+\end{tabular}
+\end{center}
+
+Hence $(\neg P \lor Q)$ is logically equivalent to $P \Rightarrow Q$.
+
+To explore the meaning of $\neg ( P \Rightarrow Q)$:
+\begin{align*}
+	\neg ( P \Rightarrow Q) &\Leftrightarrow \neg( \neg P \lor Q )\\
+	&\Leftrightarrow P \land \neg Q
+\end{align*}
+
+Hence $\neg( P \Rightarrow Q )$ is equivalent to $P \land \neg Q$.
+
+% \section{Problem Set}
+% \begin{questions}
+% \question Decide if the following statements can have a well-defined truth value.\\
+% \begin{parts}
+% 	\part[1] The integer 57 is a prime.\\
+
+% 	\part[1] The integer 57 is a Grothendieck prime.\\
+
+% 	\part[1] London is in England.\\
+
+% 	\part[1] This sentence is false.\\
+% \end{parts}
+
+
+% \question Consider the propositions $p$: $x$ is an even number, and $q$: $x$ is divisible by 3. Write the following in words:
+% \begin{parts}
+% 	\part[1] $\neg p$\\
+
+% 	\part[1] $p \lor q$\\
+
+% 	\part[1] $p \Rightarrow q$\\
+
+% 	\part[1] $p \Leftrightarrow q$\\
+
+% 	\part[1] $\neg p \land q$\\
+
+% 	\part[1] $\neg q \Rightarrow \neg p$\\
+% \end{parts}
+
+
+% \question For the following statements, write down the:
+% \begin{enumerate}
+% 	\item inverse;
+% 	\item converse;
+% 	\item contrapositive.
+% \end{enumerate}
+
+% \begin{parts}
+% 	\part[3] If the sun is shining I will wear my sunglasses.\\
+
+% 	\part[3] A shape has three sides if and only if it is a triangle.\\
+
+% 	\part[3] Marty is not a teacher or all teachers work hard.\\
+% \end{parts}
+
+
+% \question State the converse and contrapositive of each of the following implications.\\
+% \begin{parts}
+% 	\part[2] I will do well in the exam if I have listened attentively in class.\\
+
+% 	\part[2] It is necessary to have the correct password to log on to the computer.\\
+
+% 	\part[2] Only if the roll is marked will I be bothered to go to school.\\
+% \end{parts}
+
+
+% \question Write down the negation of the following statements:
+% \begin{parts}
+% 	\part[1] Students do homework.\\
+
+% 	\part[1] All students do homework.\\
+
+% 	\part[1] There are some people in this world who believe in ghosts.\\
+
+% 	\part[1] There is some real number that every natural number multiplied to it will eqaul zero. \\
+
+% 	\part[1] $\forall x \in \mathbb{R}, \exists y \in \mathbb{N} : xy = 0$\\
+% \end{parts}
+
+
+
+% \question Use truth tables to verify that the following are always true (i.e. are theorems).\\
+% \begin{parts}
+% 	\part[3] $[P \land (P \Rightarrow Q)] \Rightarrow Q$\\
+
+% 	\part[3] $[\neg Q \land (P \Rightarrow Q)] \Rightarrow \neg P$\\
+
+% \end{parts}
+
+
+% \question Express the following true statements about integers using quantifiers and mathematical symbols.\\
+% \begin{parts}
+% 	\part[2] The product of two negative integers is positive.\\
+
+% 	\part[2] The difference of two negative integers need not be positive.\\
+
+% 	\part[2] The set of integers has no smallest element.\\
+% \end{parts}
+
+
+% \question Rewrite the following so that there is no negation before any quantifier.\\
+% \begin{parts}
+% 	\part[2] $\neg [ (\forall x)(\forall y) P ]$\\
+
+% 	\part[3] $\neg [ (\forall x)(\exists y) \neg P \lor \neg Q ]$\\
+
+% 	\part[3] $\neg \bigg [ \neg [(\exists x) \neg P] \Rightarrow (\forall y) [Q \Rightarrow \neg R]\bigg ]$\\
+% \end{parts}
+% \end{questions}
+
+
+
+
+% ------------------------------------------------------------------------------
+
+\end{document}
+
+
